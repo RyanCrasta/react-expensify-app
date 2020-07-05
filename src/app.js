@@ -56,28 +56,6 @@ const jsx = (
 
 ReactDOM.render(jsx, appRoot);
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 ========tp===============
 class OldSyntax{
