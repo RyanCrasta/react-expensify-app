@@ -33,11 +33,11 @@ import AppRouter from './routers/AppRouter.js';
 import 'react-dates/lib/css/_datepicker.css';
 
 import './firebase/firebase';
-
+ 
 
 
 import configureStore from './store/configureStore.js'
-import {addExpense} from './actions/expenses.js'
+import {startSetExpenses} from './actions/expenses.js'
 //import {setTextFilter} from './actions/filters.js'
 import getVisibleExpenses from './selectors/expenses.js'
 
@@ -57,8 +57,14 @@ const jsx = (
   </Provider>      
 
 );
+ReactDOM.render(<p>Loading...</p>, appRoot);
 
-ReactDOM.render(jsx, appRoot);
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(jsx, appRoot);
+
+})
+
+
 
 /*
 ========tp===============
