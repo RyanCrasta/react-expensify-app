@@ -32,6 +32,10 @@ import './styles/styles.scss';
 import AppRouter from './routers/AppRouter.js';
 import 'react-dates/lib/css/_datepicker.css';
 
+import './firebase/firebase';
+
+
+
 import configureStore from './store/configureStore.js'
 import {addExpense} from './actions/expenses.js'
 //import {setTextFilter} from './actions/filters.js'

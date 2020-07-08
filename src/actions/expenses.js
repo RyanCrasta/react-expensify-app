@@ -1,20 +1,29 @@
 import { v4 as uuidv4 } from 'uuid'; // to generate some random ID
+import db from '../firebase/firebase';
+
 
 // action generator
 // ADD_EXPENSE
-const addExpense = ({description='', note='', amount=0, createdAt=0} = {}) => {
+const addExpense = (expense) => {
     return{
         type: 'ADD_EXPENSE',
-        expense:{
-            id: uuidv4(),
-            description,
-            note,
-            amount,
-            createdAt
-        }
+        expense
     }
 }
   
+export const startAddExpense = (expenseData = {}) => {
+    return (dispatch) => {
+        const {description='', note='', amount=0, createdAt=0} = expenseData
+        const expense = {description, note, amount, createdAt}
+        db.ref('expenses').push(expense).then((ref) => {
+            dispatch(addExpense({
+                id: ref.key,
+                ...expense
+            }))
+        })
+    }
+}
+
 //REMOVE_EXPENSE
 const removeExpense = ({id}) => {
     return{
