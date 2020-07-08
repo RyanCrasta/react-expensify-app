@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ExpenseForm from './ExpenseForm.js';
-import {editExpense} from '../actions/expenses.js';
+import {startEditExpense} from '../actions/expenses.js';
 import {startRemoveExpense} from '../actions/expenses';
 
  
@@ -16,7 +16,7 @@ function EditExpensePage(props){
             onSubmit = {(expense) => {
                     
                 // dispatch the action to edit the expense
-                props.dispatch(editExpense(props.expense.id, expense))
+                props.dispatch(startEditExpense(props.expense.id, expense))
                 // redirect to the dashboard
                 props.history.push('/')
 
