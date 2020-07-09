@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'; // to generate some random ID
 import db from '../firebase/firebase';
 
-
 // action generator
 // ADD_EXPENSE
 const addExpense = (expense) => {
@@ -10,7 +9,7 @@ const addExpense = (expense) => {
         expense
     }
 }
-  
+
 export const startAddExpense = (expenseData = {}) => {
     return (dispatch) => {
         const {description='', note='', amount=0, createdAt=0} = expenseData
@@ -82,13 +81,4 @@ export const startSetExpenses = () => {
         })
     }
 }
-
-
-
-
-
-
-
-
-
 
