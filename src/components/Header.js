@@ -8,9 +8,8 @@ export const Header = (props) => {
     return(
         <header>
             <h1>EXPENSIFY</h1>
-            <NavLink  to='/' activeClassName='is-active' >HOME   </NavLink>
-            <NavLink  to='/create' activeClassName='is-active'>CREATE         </NavLink>
-            <NavLink  to='/help' activeClassName='is-active'>HELP           </NavLink>
+            <NavLink  to='/dashboard' activeClassName='is-active' >HOME   </NavLink>
+            <NavLink  to='/create' activeClassName='is-active'>CREATE     </NavLink>
             <button onClick={props.startLogOut()}>Logout</button>
         </header>
     )
