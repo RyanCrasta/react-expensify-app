@@ -32,16 +32,15 @@ const ExpenseListItem = (props) => {
         <div>
         {props.expenses.map((exp) => {
             return(
-                <div key={exp.id}>
-                    <Link to={`/edit${exp.id}`}><h3>{exp.description}</h3></Link>
-
-                    <p>
-                        {numeral(exp.amount).format('$0,0.00')} 
-                        - 
-                        {moment(exp.createdAt).format('Do-MMMM-YYYY')}
-    
-                    </p>
-       
+                <div  key={exp.id}>
+                    <Link className="list-item" to={`/edit${exp.id}`}>
+                        <div>
+                            <h3 className="list-item__title">{exp.description}</h3>
+                            
+                            <span className="list-item__subtitle">{moment(exp.createdAt).format('Do-MMMM-YYYY')}</span>
+                        </div>
+                        <h3 className="list-item__data">{numeral(exp.amount).format('$0,0.00')}</h3>        
+                    </Link>
                 </div>
             )
 

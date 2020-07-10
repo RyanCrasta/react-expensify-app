@@ -31,7 +31,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import AppRouter, {history} from './routers/AppRouter.js';
 import 'react-dates/lib/css/_datepicker.css';
-
+import LoadingPage from './components/LoadingPage';
 import {firebase} from './firebase/firebase';
  
 import configureStore from './store/configureStore.js'
@@ -64,7 +64,7 @@ const renderApp = () => {
     }
 }
 
-ReactDOM.render(<p>Loading...</p>, appRoot);
+ReactDOM.render(<LoadingPage />, appRoot);
 
 
 

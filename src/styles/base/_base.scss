@@ -1,14 +1,16 @@
-html{
-    font-size: 62.5%; /*this makes 1rem = 10px*/
+*{
+    box-sizing: border-box;
 }
 
-*:focus {
-    outline: none !important;
+html{
+    font-size: 62.5%; /*this makes 1rem = 10px*/
 }
 
 body{
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
+    color: $dark-grey;
+    line-height: 1.6;
 }
 
 button{
